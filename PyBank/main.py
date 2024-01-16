@@ -59,7 +59,7 @@ print('Greatest Increase in Profits: ' + greatest_increase_date + '($' + str(gre
 print('Greatest Decrease in Profits: ' + greatest_decrease_date + '($' + str(greatest_decrease) + ')\n')
 
 
-with open('Analysis/FinancialAnalysis.txt', 'w') as output:
+with open('analysis/FinancialAnalysis.txt', 'w') as output:
     output.write('Financial Analysis\n\n')
     output.write('--------------------------\n\n')
     output.write('Total Months: ' + str(total_months) + '\n\n')
