@@ -4,7 +4,38 @@ This is my first Python assignment that I have completed for the RICE University
 I completed this assignment using python,csv, Git Bash and jupyter notebook.
 
 # PyBank
-In this portion of the project, i was required to create blank lists that were to be appended using a forloop that would then iterate throught the csv file that was provided. The results from that data was then applied the different functions that were in variables that had been created while running the syntax. A new file was created and the reults of the date was then saved in this file.
+In this portion of the project, I was required to create lists that were to be appended using a forloop that would then iterate throught the csv file that was provided. The results from that data was then applied the different functions that were in variables that had been created while running the syntax. A new file was created and the reults of the date was then saved in this file. I was able to utilize the len function, index function, append function and also use sum and average culculations to get my results. i have attached a snip it of it.
+total_months = 0
+net_total_amount = 0
+profit_loss = []
+profit_loss_changes = []
+dates = []
+
+with open(budget_data, 'r') as file:  #name of file, mode r-read, rw,
+    csv_reader = csv.reader(file)
+    
+    header = next(csv_reader)
+    
+    for row in csv_reader:
+        
+        # Total Number of months
+        total_months += 1
+        
+        # Net total amount of profit/loss
+        profit_loss_int = int(row[1])
+        net_total_amount += profit_loss_int
+        
+        # Append profit/loss and dates to list
+        profit_loss.append(profit_loss_int)
+        dates.append(row[0])
+    
+    
+# Calculating Changes
+for index in range(1, len(profit_loss)):
+    profit_loss_changes.append(profit_loss[index] - profit_loss[index - 1])
+
+average_change = sum(profit_loss_changes)/len(profit_loss_changes)
+average_change = round(average_change, 2)
 
 # PyPoll
 For this portion, I used Jupyter notebook to write out my code. I find that this is easier for me to visualize and catch syntax errors. once I am done with my coding, I save the file as a Python file then take that file and add it to folders that were already created in Git Bash before I can push the files to GitHub. I was able to utilize these functions: forloop, index, "f", unique, average formulas and percentages. You can see below a quick snap on how everything was utilized.
